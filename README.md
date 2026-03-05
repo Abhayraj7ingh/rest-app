@@ -14,14 +14,14 @@ Follow the steps below to set up your local development environment.
 docker run -d -p 4566:4566 localstack/localstack
 
 
-### 2 Create S3 Bucket
+**### 2 Create S3 Bucket**
 
 ```Cli
 aws --endpoint-url=http://localhost:4566 s3 mb s3://images-bucket
 aws --endpoint-url=http://localhost:4566 s3 ls
 
 
-### 3 Create DynamoDB Table
+**### 3 Create DynamoDB Table**
 
 ```Cli
 aws --endpoint-url=http://localhost:4566 dynamodb create-table \
@@ -35,3 +35,12 @@ aws --endpoint-url=http://localhost:4566 dynamodb create-table \
 --billing-mode PAY_PER_REQUEST
 
 aws --endpoint-url=http://localhost:4566 dynamodb list-tables
+
+---
+
+## ✔️ TEST
+
+```Cli
+pip install pytest
+pytest -v
+
